@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { memo, Suspense } from 'react';
+import { renderRoutes } from 'react-router-config';
 
-function App() {
+import routes from './router';
+import store from './store';
+import ZAppHeader from '@/components/app-header';
+import ZAppFooter from '@/components/app-footer';
+import { HashRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import ZAppPlayerBar from './pages/player/app-player-bar';
+export default memo(function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Provider store={store}>
+      <HashRouter>
+        <ZAppHeader />
+        <Suspense fallback={<div>page loading</div>}>
+          {renderRoutes(routes)}
+        </Suspense>
 
-export default App;
+        <ZAppFooter />
+        <ZAppPlayerBar />
+      </HashRouter>
+    </Provider>
+  );
+});
