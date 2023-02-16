@@ -43,6 +43,7 @@ export const HeaderLeft = styled.div`
           width: 28px;
           height: 19px;
           background-image: url(${require('@/assets/img/sprite_01.png')});
+
           background-repeat: -190px 0;
           top: 20px;
           right: -15px;

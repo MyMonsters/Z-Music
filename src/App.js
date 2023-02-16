@@ -3,8 +3,8 @@ import { renderRoutes } from 'react-router-config';
 
 import routes from './router';
 import store from './store';
-import ZAppHeader from '@/components/app-header';
-import ZAppFooter from '@/components/app-footer';
+import ZAppHeader from './components/app-header';
+import ZAppFooter from './components/app-footer';
 import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import ZAppPlayerBar from './pages/player/app-player-bar';
