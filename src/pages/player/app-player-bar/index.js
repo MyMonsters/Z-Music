@@ -141,7 +141,7 @@ const ZAppPlayerBar = memo(function () {
   );
   return (
     <PlayerBarWrapper className="sprite_player">
-      <div className="lyric-class">{lyricList[currentLyricIndex].content}</div>
+      
 
       <div className="content wrap-v2">
         <Control isPlaying={isPlaying}>
