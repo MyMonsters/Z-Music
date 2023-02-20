@@ -121,4 +121,6 @@ body, textarea, select, input, button {
   background-color: rgba(0, 0, 0, .5);
   color: #fff;
 }
-
+.mine-bg {
+  background: url(../img//mymusic.png) no-repeat 0 9999px;
+}

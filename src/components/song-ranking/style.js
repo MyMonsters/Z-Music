@@ -4,6 +4,14 @@ export const SongRankingWrapper = styled.div`
     display: flex;
     cursor: pointer;
     padding: 10px 0 10px 16px;
+    /* .avatar {
+      &:hover {
+        text-decoration: none;
+      }
+    } */
+    a:hover {
+      text-decoration: none;
+    }
     .info {
       padding-left: 10px;
       .update {

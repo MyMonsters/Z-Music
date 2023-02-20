@@ -8,18 +8,7 @@ export const RankingWrapper = styled.div`
 export const RankingLeft = styled.div`
   padding-top: 40px;
   width: 240px;
-  .global-ranking {
-    margin-top: 20px;
-  }
-  .selected {
-    background-color: #e6e6e6;
-  }
-  .title {
-    font-size: 14px;
-    padding: 0 10px 12px 15px;
-    font-family: 'Courier New', Courier, monospace;
-    color: #333;
-    font-weight: bold;
-  }
 `;
-export const RankingRight = styled.div``;
+export const RankingRight = styled.div`
+  width: 740px;
+`;

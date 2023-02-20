@@ -6,11 +6,18 @@ const changeAllToplistAction = (res) => ({
   allToplist: res.list,
 });
 
-const changeCurrentToplistAction = (res) => ({
-  type: actionTypes.CHANGE_CURRENT_TOPLIST,
-  currentToplist: res.playlist,
+const changeCurrentToplistInfoAction = (res) => ({
+  type: actionTypes.CHANGE_CURRENT_TOPLIST_INFO,
+  currentToplistInfo: res,
 });
-
+const changeCurrentToplistSongsAction = (res) => ({
+  type: actionTypes.CHANGE_CURRENT_TOPLIST_SONGS,
+  currentToplistSongs: res.tracks,
+});
+export const changeCurrentId = (id) => ({
+  type: actionTypes.CHANGE_CURRENT_ID,
+  currentId: id
+})
 export const getAllToplistAction = () => {
   return (dispatch) => {
     getAllToplist().then((res) => {
@@ -20,10 +27,27 @@ export const getAllToplistAction = () => {
   };
 };
 
-export const getCurrentToplistAction = (id) => {
+export const getCurrentToplistInfoAction = (id) => {
+  return (dispatch) => {
+    getAllToplist().then((res) => {
+      console.log(res);
+      const currentToplist = res.list.filter((item, index) => {
+        return item.id === id;
+      });
+      dispatch(changeCurrentToplistInfoAction(currentToplist[0]));
+    });
+
+    // getTopList(id).then((res) => {
+    //   dispatch(changeCurrentToplistAction(res));
+    // });
+  };
+};
+
+export const getCurrentToplistSongsAction = (id) => {
   return (dispatch) => {
     getTopList(id).then((res) => {
-      dispatch(changeCurrentToplistAction(res));
+      console.log(res);
+      dispatch(changeCurrentToplistSongsAction(res.playlist));
     });
   };
 };
